@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 8.786380751883687,
+        "y": 0.7985317987243334
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 9.162379061132219,
+        "y": 0.7880874012452093
+      },
+      "isLocked": false,
+      "linkedName": "Center RIght Note Intaking"
+    },
+    {
+      "anchor": {
+        "x": 8.43,
+        "y": 0.77
+      },
+      "prevControl": {
+        "x": 8.18000804244984,
+        "y": 0.7679947169180463
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Center RIght Note 2"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "reversed": false,
+  "folder": null,
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "useDefaultConstraints": true
+}

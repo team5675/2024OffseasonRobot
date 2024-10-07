@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 5.455918859648046,
+        "y": 1.4217761294408775
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 5.749378228974193,
+        "y": 1.4343040930153237
+      },
+      "isLocked": false,
+      "linkedName": "Center Center Right Note Intake"
+    },
+    {
+      "anchor": {
+        "x": 8.58,
+        "y": 2.46
+      },
+      "prevControl": {
+        "x": 8.330065002329993,
+        "y": 2.4657006087125914
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Center Center Right Note End"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0.474319054641951
+  },
+  "reversed": false,
+  "folder": null,
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "useDefaultConstraints": true
+}

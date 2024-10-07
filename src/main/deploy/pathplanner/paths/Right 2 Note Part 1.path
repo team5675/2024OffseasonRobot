@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.81,
+        "y": 4.41
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.2555609883498904,
+        "y": 3.9741780496590744
+      },
+      "isLocked": false,
+      "linkedName": "Right Start Position"
+    },
+    {
+      "anchor": {
+        "x": 2.69,
+        "y": 4.09
+      },
+      "prevControl": {
+        "x": 2.1917309899434616,
+        "y": 4.41219990310351
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Intake Right Starting Note"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "reversed": false,
+  "folder": null,
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 0.0
+  },
+  "useDefaultConstraints": true
+}

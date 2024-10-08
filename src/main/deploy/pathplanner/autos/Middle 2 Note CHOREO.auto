@@ -1,12 +1,5 @@
 {
   "version": 1.0,
-  "startingPose": {
-    "position": {
-      "x": 1.3483012914657593,
-      "y": 5.567
-    },
-    "rotation": -1.908289150533184e-31
-  },
   "command": {
     "type": "sequential",
     "data": {
@@ -24,7 +17,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Start to Middle"
+                  "pathName": "Start to Mid"
                 }
               },
               {
@@ -36,14 +29,14 @@
                       "data": {
                         "name": "Intake Command"
                       }
+                    },
+                    {
+                      "type": "wait",
+                      "data": {
+                        "waitTime": 2.2
+                      }
                     }
                   ]
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 1.5
                 }
               }
             ]
@@ -52,7 +45,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Middle to Start 5"
+            "pathName": "Mid to Start"
           }
         },
         {
@@ -64,6 +57,7 @@
       ]
     }
   },
+  "resetOdom": true,
   "folder": null,
   "choreoAuto": true
 }

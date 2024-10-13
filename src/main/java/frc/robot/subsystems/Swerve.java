@@ -41,7 +41,6 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants;
 import frc.robot.LimelightHelpers;
 import frc.robot.RobotContainer;
-import frc.robot.RobotState;
 import frc.robot.subsystems.Limelight.PosePacket;
 import swervelib.SwerveController;
 import swervelib.SwerveDrive;
@@ -417,9 +416,6 @@ public class Swerve extends SubsystemBase  implements WiredSubsystem {
         //     }  
         // }
     }
-
-    
-    
 
         @Override
     public InnerWiredSubsystemState getState() {

@@ -1,39 +1,39 @@
-package frc.robot.commands.auto;
+// package frc.robot.commands.auto;
 
-import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.Launcher;
+// import edu.wpi.first.wpilibj2.command.Command;
+// import frc.robot.subsystems.Intake;
+// import frc.robot.subsystems.Launcher;
 
-public class NoNoteCommand extends Command {
+// public class NoNoteCommand extends Command {
 
    
- public NoNoteCommand(){
+//  public NoNoteCommand(){
     
     
- }
-    @Override
-    public void initialize() {
+//  }
+//     @Override
+//     public void initialize() {
      
-       addRequirements(Intake.getInstance(), Launcher.getInstance());
-    }
+//        addRequirements(Intake.getInstance(), Launcher.getInstance());
+//     }
 
-    @Override
-    public void execute() {
+//     @Override
+//     public void execute() {
      
-    }
+//     }
 
-    @Override
-    public boolean isFinished() {
-        if(!Launcher.getInstance().noteInHolder.get()){
-            return true;
-        } else
-        return false;
-    }
+//     @Override
+//     public boolean isFinished() {
+//         if(!Launcher.getInstance().noteInHolder.get()){
+//             return true;
+//         } else
+//         return false;
+//     }
 
-    @Override
-    public void end(boolean interrupted) {
-        Intake.getInstance().intakeMotor.set(0);
-        Launcher.getInstance().noteHolder.set(0);
-    }
-}
+//     @Override
+//     public void end(boolean interrupted) {
+//         Intake.getInstance().intakeMotor.set(0);
+//         Launcher.getInstance().noteHolder.set(0);
+//     }
+// }
 

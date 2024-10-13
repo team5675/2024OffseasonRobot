@@ -24,24 +24,24 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import frc.robot.commands.auto.LaunchNoteCommand;
-import frc.robot.commands.auto.NoNoteCommand;
-import frc.robot.commands.auto.ShutdownLauncherCommand;
+// import frc.robot.commands.auto.LaunchNoteCommand;
+// import frc.robot.commands.auto.NoNoteCommand;
+// import frc.robot.commands.auto.ShutdownLauncherCommand;
 import frc.robot.commands.auto.xLineUp;
 import frc.robot.commands.auto.yLineUp;
 import frc.robot.commands.auto.HeadingFix;
 import frc.robot.commands.auto.ForwardNudge;
-import frc.robot.subsystems.Blower;
-import frc.robot.subsystems.Climber;
-import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.LEDs;
-import frc.robot.subsystems.Launcher;
+// import frc.robot.subsystems.Blower;
+// import frc.robot.subsystems.Climber;
+// import frc.robot.subsystems.Intake;
+// import frc.robot.subsystems.LEDs;
+// import frc.robot.subsystems.Launcher;
 import frc.robot.subsystems.Swerve;
-import frc.robot.subsystems.Wristavator;
+// import frc.robot.subsystems.Wristavator;
 import edu.wpi.first.wpilibj.Timer;
 import frc.robot.commands.auto.BlinkLimelightCommand;
-import frc.robot.commands.auto.IntakeCommand;
-import frc.robot.commands.auto.LEDCommand;
+// import frc.robot.commands.auto.IntakeCommand;
+// import frc.robot.commands.auto.LEDCommand;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
@@ -73,18 +73,18 @@ public class RobotContainer {
     
     Swerve.getInstance();
     
-    NamedCommands.registerCommand("LaunchNoteCommand", new LaunchNoteCommand());
-    NamedCommands.registerCommand("Intake Command", new IntakeCommand());
-    NamedCommands.registerCommand("Shutdown Launcher", new ShutdownLauncherCommand());
-    NamedCommands.registerCommand("NO NOTE", new NoNoteCommand());
+    // NamedCommands.registerCommand("LaunchNoteCommand", new LaunchNoteCommand());
+    // NamedCommands.registerCommand("Intake Command", new IntakeCommand());
+    // NamedCommands.registerCommand("Shutdown Launcher", new ShutdownLauncherCommand());
+    // NamedCommands.registerCommand("NO NOTE", new NoNoteCommand());
     
    autoChooser = AutoBuilder.buildAutoChooser("Leave Robot Starting Zone");
     /*AutoSelector.addOption("Leave", new PathPlannerAuto("Leave Robot Starting Zone"));
     AutoSelector.addOption("6 Note", new PathPlannerAuto("I6N Auto"));
     AutoSelector.addOption("2 Note", new PathPlannerAuto("2 Note Auto"));*/
     
-    LEDs.getInstance().createBlinkin();
-    LEDs.getInstance().setAllianceColor();
+    // LEDs.getInstance().createBlinkin();
+    // LEDs.getInstance().setAllianceColor();
     
 
     driverController = new CommandXboxController(0);
@@ -116,95 +116,95 @@ public class RobotContainer {
   public void configureBindings() {
     
     //set up event triggers for states
-    driverController.rightTrigger(0.5).and(Launcher.getInstance().getNoteSerialized())
-      .onTrue(Commands.run(
-        () -> {Intake.getInstance().intakeMotor.set(-0.9);
-          Launcher.getInstance().noteHolder.set(-0.8);
-        }, Intake.getInstance()))
-      .onFalse(Commands.run(
-        () -> {Intake.getInstance().intakeMotor.set(0);
-        Launcher.getInstance().noteHolder.set(0);}, Intake.getInstance()));
+    // driverController.rightTrigger(0.5).and(Launcher.getInstance().getNoteSerialized())
+    //   .onTrue(Commands.run(
+    //     () -> {Intake.getInstance().intakeMotor.set(-0.9);
+    //       Launcher.getInstance().noteHolder.set(-0.8);
+    //     }, Intake.getInstance()))
+    //   .onFalse(Commands.run(
+    //     () -> {Intake.getInstance().intakeMotor.set(0);
+    //     Launcher.getInstance().noteHolder.set(0);}, Intake.getInstance()));
 
-    driverController.leftTrigger(0.5)
-      .onTrue(Commands.run(
-        () -> {Intake.getInstance().intakeMotor.set(0.9);
-        Launcher.getInstance().noteHolder.set(0.8);}, Intake.getInstance()))
-      .onFalse(Commands.run(
-        () -> {Intake.getInstance().intakeMotor.set(0);
-        Launcher.getInstance().noteHolder.set(0);}, Intake.getInstance()));
+    // driverController.leftTrigger(0.5)
+    //   .onTrue(Commands.run(
+    //     () -> {Intake.getInstance().intakeMotor.set(0.9);
+    //     Launcher.getInstance().noteHolder.set(0.8);}, Intake.getInstance()))
+    //   .onFalse(Commands.run(
+    //     () -> {Intake.getInstance().intakeMotor.set(0);
+    //     Launcher.getInstance().noteHolder.set(0);}, Intake.getInstance()));
 
-    auxController.x()
-      .onTrue(Commands.run(
-        () -> {
-          Launcher.getInstance().setRPMSpeaker();
+    // auxController.x()
+    //   .onTrue(Commands.run(
+    //     () -> {
+    //       Launcher.getInstance().setRPMSpeaker();
 
-        if(Launcher.getInstance().getLauncherAtRPM().getAsBoolean()) {
-          Launcher.getInstance().noteHolder.set(-0.8);
-        } else {
-          Launcher.getInstance().noteHolder.set(0);
-        }
-        }, Launcher.getInstance()))
-        .onFalse(Commands.run(() -> {Launcher.getInstance().setIdle();
-          Launcher.getInstance().noteHolder.set(0);}, Launcher.getInstance()));
+    //     if(Launcher.getInstance().getLauncherAtRPM().getAsBoolean()) {
+    //       Launcher.getInstance().noteHolder.set(-0.8);
+    //     } else {
+    //       Launcher.getInstance().noteHolder.set(0);
+    //     }
+    //     }, Launcher.getInstance()))
+    //     .onFalse(Commands.run(() -> {Launcher.getInstance().setIdle();
+    //       Launcher.getInstance().noteHolder.set(0);}, Launcher.getInstance()));
 
-    auxController.y()
-      .onTrue(Commands.run(
-        () -> {
-          Blower.getInstance().blowerMotorAmp.set(1);
-          Launcher.getInstance().setRPMAmp();
+    // auxController.y()
+    //   .onTrue(Commands.run(
+    //     () -> {
+    //       Blower.getInstance().blowerMotorAmp.set(1);
+    //       Launcher.getInstance().setRPMAmp();
 
-        if(Launcher.getInstance().getLauncherAtRPM().getAsBoolean()) {
-          Launcher.getInstance().noteHolder.set(-0.8);
-        } else {
-          Launcher.getInstance().noteHolder.set(0);
-        }
-        }, Launcher.getInstance(), Blower.getInstance()))
-        .onFalse(Commands.run(() -> {
-          Launcher.getInstance().setIdle();
-          Launcher.getInstance().noteHolder.set(0);
-          Blower.getInstance().blowerMotorAmp.set(0);}, Launcher.getInstance()));
+    //     if(Launcher.getInstance().getLauncherAtRPM().getAsBoolean()) {
+    //       Launcher.getInstance().noteHolder.set(-0.8);
+    //     } else {
+    //       Launcher.getInstance().noteHolder.set(0);
+    //     }
+    //     }, Launcher.getInstance(), Blower.getInstance()))
+    //     .onFalse(Commands.run(() -> {
+    //       Launcher.getInstance().setIdle();
+    //       Launcher.getInstance().noteHolder.set(0);
+    //       Blower.getInstance().blowerMotorAmp.set(0);}, Launcher.getInstance()));
 
-    driverController.a()
-          .onTrue(Commands.run(
-            () -> {
-              Launcher.getInstance().setRPMTrap();
-            if(Launcher.getInstance().getLauncherAtRPM().getAsBoolean()) {
-              Launcher.getInstance().noteHolder.set(-0.8);
-            } else {
-              Launcher.getInstance().noteHolder.set(0);
-            } 
-            }, Launcher.getInstance()))
-            .onFalse(Commands.run(() -> {Launcher.getInstance().setIdle();
-              Launcher.getInstance().noteHolder.set(0);
-            }, Launcher.getInstance()));
+    // driverController.a()
+    //       .onTrue(Commands.run(
+    //         () -> {
+    //           Launcher.getInstance().setRPMTrap();
+    //         if(Launcher.getInstance().getLauncherAtRPM().getAsBoolean()) {
+    //           Launcher.getInstance().noteHolder.set(-0.8);
+    //         } else {
+    //           Launcher.getInstance().noteHolder.set(0);
+    //         } 
+    //         }, Launcher.getInstance()))
+    //         .onFalse(Commands.run(() -> {Launcher.getInstance().setIdle();
+    //           Launcher.getInstance().noteHolder.set(0);
+    //         }, Launcher.getInstance()));
 
-    auxController.leftBumper()
-      .whileTrue(Commands.run(
-        () -> {
-        Blower.getInstance().blowerMotorTrapLeft.set(1);
-        Blower.getInstance().blowerMotorTrapRight.set(-1);
-            }, Blower.getInstance()))
-              .whileFalse(Commands.run(() -> {
-                Blower.getInstance().blowerMotorTrapLeft.set(0);
-              Blower.getInstance().blowerMotorTrapRight.set(0);
-            }, Blower.getInstance()));
+    // auxController.leftBumper()
+    //   .whileTrue(Commands.run(
+    //     () -> {
+    //     Blower.getInstance().blowerMotorTrapLeft.set(1);
+    //     Blower.getInstance().blowerMotorTrapRight.set(-1);
+    //         }, Blower.getInstance()))
+    //           .whileFalse(Commands.run(() -> {
+    //             Blower.getInstance().blowerMotorTrapLeft.set(0);
+    //           Blower.getInstance().blowerMotorTrapRight.set(0);
+    //         }, Blower.getInstance()));
 
-    driverController.x()
-      .onTrue(Commands.run(
-        () -> {
-          Launcher.getInstance().setRPMSpeaker();
+    // driverController.x()
+    //   .onTrue(Commands.run(
+    //     () -> {
+    //       Launcher.getInstance().setRPMSpeaker();
 
-        if(Launcher.getInstance().getLauncherAtRPM().getAsBoolean()) {
-          Launcher.getInstance().noteHolder.set(-0.8);
-        } else {
-          Launcher.getInstance().noteHolder.set(0);
-        }
-        }, Launcher.getInstance()))
-        .onFalse(Commands.run(() -> {Launcher.getInstance().setIdle();
-          Launcher.getInstance().noteHolder.set(0);}, Launcher.getInstance()));
+    //     if(Launcher.getInstance().getLauncherAtRPM().getAsBoolean()) {
+    //       Launcher.getInstance().noteHolder.set(-0.8);
+    //     } else {
+    //       Launcher.getInstance().noteHolder.set(0);
+    //     }
+    //     }, Launcher.getInstance()))
+    //     .onFalse(Commands.run(() -> {Launcher.getInstance().setIdle();
+    //       Launcher.getInstance().noteHolder.set(0);}, Launcher.getInstance()));
 
-    Launcher.getInstance().getNoteSerialized().negate().onTrue(new BlinkLimelightCommand());
-    Launcher.getInstance().getNoteSerialized().negate().onTrue(new LEDCommand()).onFalse(Commands.runOnce(() -> LEDs.getInstance().turnOff()));
+    // Launcher.getInstance().getNoteSerialized().negate().onTrue(new BlinkLimelightCommand());
+    // Launcher.getInstance().getNoteSerialized().negate().onTrue(new LEDCommand()).onFalse(Commands.runOnce(() -> LEDs.getInstance().turnOff()));
 
     //auxController.b()
      // .onTrue(Commands.runOnce(
@@ -234,32 +234,32 @@ public class RobotContainer {
     //       .setElevatorZeroHeight(Constants.WristavatorConstants.elevatorZeroOffset)));
 
   
-    auxController.rightBumper()
-        .onTrue(Commands.run(
-         () -> {
-          Climber.getInstance().raiseClimber();
-         }, Climber.getInstance()))
-        .onFalse(Commands.run(
-          () -> {
-            Climber.getInstance().stopClimber();
-          }, Climber.getInstance()));
+    // auxController.rightBumper()
+    //     .onTrue(Commands.run(
+    //      () -> {
+    //       Climber.getInstance().raiseClimber();
+    //      }, Climber.getInstance()))
+    //     .onFalse(Commands.run(
+    //       () -> {
+    //         Climber.getInstance().stopClimber();
+    //       }, Climber.getInstance()));
 
-          auxController.a()
-        .whileTrue(Commands.run(
-         () -> {
-          Climber.getInstance().climberRevolutions();
-         }, Climber.getInstance()))
-        .onFalse(Commands.runOnce(
-          () -> {
-            Climber.getInstance().stopClimber();
-          }, Climber.getInstance()));
+    //       auxController.a()
+    //     .whileTrue(Commands.run(
+    //      () -> {
+    //       Climber.getInstance().climberRevolutions();
+    //      }, Climber.getInstance()))
+    //     .onFalse(Commands.runOnce(
+    //       () -> {
+    //         Climber.getInstance().stopClimber();
+    //       }, Climber.getInstance()));
 
-          //Elevator
-          driverController.rightBumper().onTrue(Commands.run(() -> Wristavator.getInstance().setElevatorHeight(0.2), Wristavator.getInstance())).onFalse(
-            Commands.run(() -> Wristavator.getInstance().stopElevator(), Wristavator.getInstance()));
+    //       //Elevator
+    //       driverController.rightBumper().onTrue(Commands.run(() -> Wristavator.getInstance().setElevatorHeight(0.2), Wristavator.getInstance())).onFalse(
+    //         Commands.run(() -> Wristavator.getInstance().stopElevator(), Wristavator.getInstance()));
           
-          driverController.leftBumper().onTrue(Commands.run(() -> Wristavator.getInstance().setElevatorHeight(0.1), Wristavator.getInstance()))
-          .onFalse(Commands.run(() -> Wristavator.getInstance().stopElevator(), Wristavator.getInstance()));
+    //       driverController.leftBumper().onTrue(Commands.run(() -> Wristavator.getInstance().setElevatorHeight(0.1), Wristavator.getInstance()))
+    //       .onFalse(Commands.run(() -> Wristavator.getInstance().stopElevator(), Wristavator.getInstance()));
 
           driverController.povRight().whileTrue(new xLineUp());
           driverController.povUp().whileTrue(new HeadingFix());

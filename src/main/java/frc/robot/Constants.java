@@ -100,32 +100,32 @@ public class Constants {
 
     public class LauncherConstants {
 
-        public static final int noteinHolderPort = 3;
+        // public static final int noteinHolderPort = 3;
 
-        public static final int upperWheelLauncherId = 30;
-        public static final int lowerWheelLauncherId = 31;
-        public static final int noteHolderId         = 32;
+        // public static final int upperWheelLauncherId = 30;
+        // public static final int lowerWheelLauncherId = 31;
+        // public static final int noteHolderId         = 32;
 
-        public static final double launcherP = 0.000023;
-        public static final double launcherI = 0.0;
-        public static final double launcherD = 0.0;
-        public static final double launcherFF = 0.0014;//in volts
+        // public static final double launcherP = 0.000023;
+        // public static final double launcherI = 0.0;
+        // public static final double launcherD = 0.0;
+        // public static final double launcherFF = 0.0014;//in volts
 
-        public static final double noteP = 0.4;
-        public static final double noteI = 0.0;
-        public static final double noteD = 0.0;
-        public static final double noteFF = 0.2;//in volts
+        // public static final double noteP = 0.4;
+        // public static final double noteI = 0.0;
+        // public static final double noteD = 0.0;
+        // public static final double noteFF = 0.2;//in volts
 
-        public static final double idleRPM = 0;//RPM
+        // public static final double idleRPM = 0;//RPM
 
-        //Will come from tuing RPM range
-        public static List<Double> launcherSpeakerPolyCoeffs = Arrays.asList(1.222, -0.234, 0.235346);
-        public static List<Double> launcherAmpPolyCoeffs = Arrays.asList(1.222, -0.234, 0.235346);
+        // //Will come from tuing RPM range
+        // public static List<Double> launcherSpeakerPolyCoeffs = Arrays.asList(1.222, -0.234, 0.235346);
+        // public static List<Double> launcherAmpPolyCoeffs = Arrays.asList(1.222, -0.234, 0.235346);
 
-        public static final double rpmTolerance = 50; //rpm
+        // public static final double rpmTolerance = 50; //rpm
 
-        public static final double dumbHolderSpeed = 200; //rpm
-        public static final double launchingHolderSpeed = 2000; //rpm
+        // public static final double dumbHolderSpeed = 200; //rpm
+        // public static final double launchingHolderSpeed = 2000; //rpm
 
         //Relative to center of robot on the floor
         public static final Translation3d launcherMouthHomeLocationXYZ = 
@@ -146,91 +146,91 @@ public class Constants {
 
     public class WristavatorConstants {
 
-        public static final int wristID = 40;
-        public static final int elevatorID = 5;
+        // public static final int wristID = 40;
+        // public static final int elevatorID = 5;
 
-        public static final int wristLimitSwitchId = 4;
-        public static final int elevatorLimitSwitchID = 5;
+        // public static final int wristLimitSwitchId = 4;
+        // public static final int elevatorLimitSwitchID = 5;
 
-        public static final double elevatorTolerance = 0.005;//meters
-        public static final double wristTolerance = 0.01;//radians
+        // public static final double elevatorTolerance = 0.005;//meters
+        // public static final double wristTolerance = 0.01;//radians
 
-        public static final double elevatorP = 0.02;
-        public static final double elevatorI = 0;
-        public static final double elevatorD = 0;
+        // public static final double elevatorP = 0.02;
+        // public static final double elevatorI = 0;
+        // public static final double elevatorD = 0;
 
-        public static final double wristP = 0.0002;
-        public static final double wristI = 0;
-        public static final double wristD = 0;
+        // public static final double wristP = 0.0002;
+        // public static final double wristI = 0;
+        // public static final double wristD = 0;
 
-        public static final double wristKS = 0.22;
-        public static final double wristKG = 0.25;
-        public static final double wristKV = 3.66;
+        // public static final double wristKS = 0.22;
+        // public static final double wristKG = 0.25;
+        // public static final double wristKV = 3.66;
 
-        public static final double elevatorKS = 0.22;
-        public static final double elevatorKG = 0.02;
-        public static final double elevatorKV = 153.45; //assuming 15lb load and 100:1 reduction
+        // public static final double elevatorKS = 0.22;
+        // public static final double elevatorKG = 0.02;
+        // public static final double elevatorKV = 153.45; //assuming 15lb load and 100:1 reduction
 
-        //Meters, 0 is home, rotation is 0 from horizontal
-        //public static final Translation2d wristavatorIntakePose = new Translation2d(0, Rotation2d.fromDegrees(0));
-        //public static final Translation2d wristavatorAmpPose = new Translation2d(0.152, Rotation2d.fromDegrees(95));
-        //public static final Translation2d wristavatorTrapPose = new Translation2d(1, Rotation2d.fromDegrees(45));
+        // //Meters, 0 is home, rotation is 0 from horizontal
+        // //public static final Translation2d wristavatorIntakePose = new Translation2d(0, Rotation2d.fromDegrees(0));
+        // //public static final Translation2d wristavatorAmpPose = new Translation2d(0.152, Rotation2d.fromDegrees(95));
+        // //public static final Translation2d wristavatorTrapPose = new Translation2d(1, Rotation2d.fromDegrees(45));
 
-        public static final Translation2d wristavatorHomePose = new Translation2d(0, Rotation2d.fromDegrees(55));
-        public static final Translation2d wristavatorSpeakerProtectedPose = new Translation2d(0, Rotation2d.fromDegrees(35));
+        // public static final Translation2d wristavatorHomePose = new Translation2d(0, Rotation2d.fromDegrees(55));
+        // public static final Translation2d wristavatorSpeakerProtectedPose = new Translation2d(0, Rotation2d.fromDegrees(35));
 
-        public static final Rotation2d wristZeroOffset = Rotation2d.fromDegrees(55);//degrees, what the wrist is actually at when limit switch hit
-        public static final double elevatorZeroOffset = 0.02;//meters, what elevator is actaully at when limit switch hits
+        // public static final Rotation2d wristZeroOffset = Rotation2d.fromDegrees(55);//degrees, what the wrist is actually at when limit switch hit
+        // public static final double elevatorZeroOffset = 0.02;//meters, what elevator is actaully at when limit switch hits
 
-        public static final int wristPositionOffset = 360; //Should this be zero?
-        public static final int elevatorPositionOffset = 1;
+        // public static final int wristPositionOffset = 360; //Should this be zero?
+        // public static final int elevatorPositionOffset = 1;
 
-        //m/s and m/s^s
-        public static final TrapezoidProfile.Constraints wristProfileConstraints = new TrapezoidProfile.Constraints(1, 0.3);
-        public static final TrapezoidProfile.Constraints elevatorProfileConstraints = new TrapezoidProfile.Constraints(0.5, 0.2);
+        // //m/s and m/s^s
+        // public static final TrapezoidProfile.Constraints wristProfileConstraints = new TrapezoidProfile.Constraints(1, 0.3);
+        // public static final TrapezoidProfile.Constraints elevatorProfileConstraints = new TrapezoidProfile.Constraints(0.5, 0.2);
     }
 
     public class IntakeConstants {
 
-        public static final int intakeMotorID = 25;
-        public static final int IntakeProxPort = 2;
-        public static final int IntakeSpeedRPM = 1238;
-        public static final int OuttakeSpeedRPM = -1238;
+        // public static final int intakeMotorID = 25;
+        // public static final int IntakeProxPort = 2;
+        // public static final int IntakeSpeedRPM = 1238;
+        // public static final int OuttakeSpeedRPM = -1238;
         
     }
 
     public class ClimberConstants {
 
-        public static final int climberMotorID = 27;
-        public static final int servoID = 2;
+        // public static final int climberMotorID = 27;
+        // public static final int servoID = 2;
 
-        public static final int latchPulseTimeClosed = 1500;
-        public static final int latchPulseTimeOpen = 1200;
+        // public static final int latchPulseTimeClosed = 1500;
+        // public static final int latchPulseTimeOpen = 1200;
 
-        public static final double climbP = 0.02;
-        public static final double climbI = 0.0;
-        public static final double climbD = 0; //2e-6;
+        // public static final double climbP = 0.02;
+        // public static final double climbI = 0.0;
+        // public static final double climbD = 0; //2e-6;
 
-        public static final Rotation2d climbExtended = Rotation2d.fromDegrees(45); //degrees
-        public static final Rotation2d climbRetracted = Rotation2d.fromDegrees(0); //degrees
-        public static final int limitSwitchPort = 2;
+        // public static final Rotation2d climbExtended = Rotation2d.fromDegrees(45); //degrees
+        // public static final Rotation2d climbRetracted = Rotation2d.fromDegrees(0); //degrees
+        // public static final int limitSwitchPort = 2;
     }
 
     public class BlowerConstants {
             
-            public static final int blowerMotorAmpID = 26;
-            public static final double BlowerSpeedPercentage = 0.5;
-            public static final int leftBlowerMotorTrapID = 33;
-            public static final int rightBlowerMotorTrapID = 34;
+            // public static final int blowerMotorAmpID = 26;
+            // public static final double BlowerSpeedPercentage = 0.5;
+            // public static final int leftBlowerMotorTrapID = 33;
+            // public static final int rightBlowerMotorTrapID = 34;
     }
 
     public class LEDConstants{
-        public static final int blinkinID = 1;
-        public static final double LEDRainbow = -0.99;
-        public static final double LEDOceanRainbow = -0.95;
-        public static final double LEDOrange = 0.65;
-        public static final double LEDBlue = 0.87;
-        public static final double LEDRed = 0.59;
+        // public static final int blinkinID = 1;
+        // public static final double LEDRainbow = -0.99;
+        // public static final double LEDOceanRainbow = -0.95;
+        // public static final double LEDOrange = 0.65;
+        // public static final double LEDBlue = 0.87;
+        // public static final double LEDRed = 0.59;
         //Change the default pattern by holding the mode button, then holding the other button
     }
     /**

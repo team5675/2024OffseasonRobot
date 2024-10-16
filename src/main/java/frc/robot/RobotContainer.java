@@ -59,10 +59,10 @@ public class RobotContainer {
   public static CommandXboxController driverController;
   public static CommandXboxController auxController;
 
-   private final SendableChooser<Command> autoChooser;
-   private final ShuffleboardTab PDHTab;
-   PowerDistribution pdh;
-   PathPlannerPath path;
+   //private final SendableChooser<Command> autoChooser;
+  //  private final ShuffleboardTab PDHTab;
+  //  PowerDistribution pdh;
+  //  PathPlannerPath path;
   //private final SendableChooser<PathPlannerAuto> AutoSelector = new SendableChooser<PathPlannerAuto>();
 
   public RobotContainer() {
@@ -78,7 +78,7 @@ public class RobotContainer {
     // NamedCommands.registerCommand("Shutdown Launcher", new ShutdownLauncherCommand());
     // NamedCommands.registerCommand("NO NOTE", new NoNoteCommand());
     
-   autoChooser = AutoBuilder.buildAutoChooser("Leave Robot Starting Zone");
+   //autoChooser = AutoBuilder.buildAutoChooser();
     /*AutoSelector.addOption("Leave", new PathPlannerAuto("Leave Robot Starting Zone"));
     AutoSelector.addOption("6 Note", new PathPlannerAuto("I6N Auto"));
     AutoSelector.addOption("2 Note", new PathPlannerAuto("2 Note Auto"));*/
@@ -94,13 +94,13 @@ public class RobotContainer {
 
      // SendableBuilder.initSendable(SendableBuilder);
     // builder.setSmartDashboardType("PowerDistribution");
-    PDHTab = Shuffleboard.getTab("PDH");
-    PowerDistribution pdh = new PowerDistribution(1, ModuleType.kRev);
-    PDHTab.add("PDP", pdh).withWidget(BuiltInWidgets.kPowerDistribution);
+    // PDHTab = Shuffleboard.getTab("PDH");
+    // PowerDistribution pdh = new PowerDistribution(1, ModuleType.kRev);
+    // PDHTab.add("PDP", pdh).withWidget(BuiltInWidgets.kPowerDistribution);
     
     //LaunchNoteCommand = Commands.
     //swerveDrive.setCosineCompensator(false);
-   SmartDashboard.putData("Auto Chooser", autoChooser);
+   //SmartDashboard.putData("Auto Chooser", autoChooser);
    //SmartDashboard.putData(pdp);
     //SmartDashboard.putData("Auto Selector", AutoSelector);
   }
@@ -270,25 +270,26 @@ public class RobotContainer {
           
     // PATHFIND THEN FOLLOW PATH
     
-    try {
-      path = PathPlannerPath.fromPathFile("PATHFINDING");
-    } catch (IOException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    } catch (ParseException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    }
+    // try {
+    //   path = PathPlannerPath.fromPathFile("PATHFINDING");
+    // } catch (IOException e) {
+    //   // TODO Auto-generated catch block
+    //   e.printStackTrace();
+    // } catch (ParseException e) {
+    //   // TODO Auto-generated catch block
+    //   e.printStackTrace();
+    // }
 
 // Create the constraints to use while pathfinding. The constraints defined in the path will only be used for the path.
-      PathConstraints constraints = new PathConstraints(
-        3.0, 4.0,
-        Units.degreesToRadians(540), Units.degreesToRadians(720));
+//TODO
+      // PathConstraints constraints = new PathConstraints(
+      //   3.0, 4.0,
+      //   Units.degreesToRadians(540), Units.degreesToRadians(720));
 
-      // Since AutoBuilder is configured, we can use it to build pathfinding commands
-      Command pathfindingCommand = AutoBuilder.pathfindThenFollowPath(
-        path,
-        constraints);
+      // // Since AutoBuilder is configured, we can use it to build pathfinding commands
+      // Command pathfindingCommand = AutoBuilder.pathfindThenFollowPath(
+      //   path,
+      //   constraints);
     // Since we are using a holonomic drivetrain, the rotation component of this pose
 // represents the goal holonomic rotation
 // Pose2d targetPose = new Pose2d(10, 5, Rotation2d.fromDegrees(180));
@@ -307,15 +308,15 @@ public class RobotContainer {
 //         0.0, // Goal end velocity in meters/sec
 //         0.0 // Rotation delay distance in meters. This is how far the robot should travel before attempting to rotate.
 // );
-
-driverController.y().whileTrue(Commands.run(() -> {pathfindingCommand.schedule();
-  System.out.println("Pathfinding Command Scheduled");
-}, Swerve.getInstance()));
+//TODO
+// driverController.y().whileTrue(Commands.run(() -> {pathfindingCommand.schedule();
+//   System.out.println("Pathfinding Command Scheduled");
+// }, Swerve.getInstance()));
   }
  
-  public Command getAutonomousCommand() {
-    return autoChooser.getSelected();
-  }
+  // public Command getAutonomousCommand() {
+  //   return autoChooser.getSelected();
+  // }
   
   public static void rumble() {
    

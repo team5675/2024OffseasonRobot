@@ -182,7 +182,7 @@ public class Swerve extends SubsystemBase  implements WiredSubsystem {
             Units.degreesToRadians(720),
             Units.degreesToRadians(720));
 
-        swerveState = SwerveState.HOME;
+        
 
         prevTimestamp = 0;
     }
@@ -328,7 +328,7 @@ public class Swerve extends SubsystemBase  implements WiredSubsystem {
         ()->MathUtil.applyDeadband(RobotContainer.getDriverController().getRightX(), 
         Constants.SwerveConstants.XboxJoystickDeadband));
 
-    // Boolean doRejectUpdate = false;
+     Boolean doRejectUpdate = false;
     // LimelightHelpers.PoseEstimate mt1 = LimelightHelpers.getBotPoseEstimate_wpiBlue(Constants.LimelightConstants.limelightName);
       
     // if(DriverStation.isDisabled()){
@@ -361,12 +361,14 @@ public class Swerve extends SubsystemBase  implements WiredSubsystem {
     
     Boolean doRejectUpdateMt2 = false;
     //Change to Radians?
+    //TODO
     LimelightHelpers.SetRobotOrientation(Constants.LimelightConstants.limelightName, swerveDrive.getYaw().getDegrees(), 0, 0, 0, 0, 0);
     LimelightHelpers.PoseEstimate mt2 = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2(Constants.LimelightConstants.limelightName);
     //   if(Math.abs(getGyroAngle().getRotations()) > 720) // if our angular velocity is greater than 720 degrees per second, ignore vision updates
     //   {
     //     doRejectUpdate = true;
     //   }
+    //TODO
       if(mt2.tagCount == 0)
       {
         doRejectUpdateMt2 = true;

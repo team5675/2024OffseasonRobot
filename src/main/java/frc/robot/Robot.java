@@ -23,8 +23,8 @@ public class Robot extends TimedRobot {
     //CameraServer.startAutomaticCapture();
     m_robotContainer = new RobotContainer();
     PathfindingCommand.warmupCommand().schedule();
-    DataLogManager.start();
-    DriverStation.startDataLog(DataLogManager.getLog());
+    // DataLogManager.start();
+    // DriverStation.startDataLog(DataLogManager.getLog());
     
   }
 
@@ -46,11 +46,11 @@ public class Robot extends TimedRobot {
   public void autonomousInit() {
    
    
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+    // m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.schedule();
-    }
+    // if (m_autonomousCommand != null) {
+    //   m_autonomousCommand.schedule();
+    // }
   }
 
   @Override

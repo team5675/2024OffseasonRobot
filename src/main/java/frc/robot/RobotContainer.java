@@ -27,7 +27,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.auto.LaunchNoteCommand;
 import frc.robot.commands.auto.NoNoteCommand;
 import frc.robot.commands.auto.ShutdownLauncherCommand;
-import frc.robot.commands.auto.xLineUp;
+import frc.robot.commands.auto.xLineUp
 import frc.robot.commands.auto.yLineUp;
 import frc.robot.commands.auto.HeadingFix;
 import frc.robot.commands.auto.ForwardNudge;

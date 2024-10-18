@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.81,
+        "y": 4.41
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.8573964883298728,
+        "y": 2.2037678680955333
+      },
+      "isLocked": false,
+      "linkedName": "Right Start Position"
+    },
+    {
+      "anchor": {
+        "x": 8.786380751883687,
+        "y": 0.7985317987243334
+      },
+      "prevControl": {
+        "x": 7.052982457091843,
+        "y": 0.613506138044305
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Center RIght Note Intaking"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 720.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0.0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Right Paths",
+  "previewStartingState": {
+    "rotation": -55.0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": false
+}

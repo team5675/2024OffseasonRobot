@@ -155,11 +155,11 @@ public class FieldConstants {
   public static double aprilTagWidth = Units.inchesToMeters(6.50);
   public static AprilTagFieldLayout aprilTags;
 
-  static {
-    try {
-      aprilTags = AprilTagFieldLayout.loadFromResource(k2024Crescendo.m_resourceFile);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-  }
+  // static {
+  //   try {
+  //     aprilTags = AprilTagFieldLayout.loadFromResource(k2024Crescendo.m_resourceFile);
+  //   } catch (IOException e) {
+  //     throw new RuntimeException(e);
+  //   }
+  //}
 }

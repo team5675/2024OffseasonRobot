@@ -33,6 +33,7 @@ import frc.robot.commands.auto.HeadingFix;
 import frc.robot.commands.auto.ForwardNudge;
 import frc.robot.subsystems.Blower;
 import frc.robot.subsystems.Climber;
+import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.LEDs;
 import frc.robot.subsystems.Launcher;
@@ -311,6 +312,16 @@ public class RobotContainer {
 driverController.y().whileTrue(Commands.run(() -> {pathfindingCommand.schedule();
   System.out.println("Pathfinding Command Scheduled");
 }, Swerve.getInstance()));
+
+
+    // Elevator rise and fall
+    driverController.rightStick().onTrue(Commands.run(() -> {
+      Elevator.getinstance().ElevatorRise();
+    }));
+
+    driverController.leftStick().onTrue(Commands.run(() -> {
+      Elevator.getinstance().ElevatorFall();
+    }));
   }
  
   public Command getAutonomousCommand() {

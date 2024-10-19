@@ -1,18 +1,19 @@
 {
-    "fileName": "ChoreoLib2025Beta.json",
+    "fileName": "ChoreoLib.json",
     "name": "ChoreoLib",
-    "version": "2025.0.0-beta-2",
-    "uuid": "b5e23f0a-dac9-4ad2-8dd6-02767c520aca",
+    "version": "2024.2.3",
+    "uuid": "287cff6e-1b60-4412-8059-f6834fb30e30",
     "frcYear": "2024",
     "mavenUrls": [
-        "https://SleipnirGroup.github.io/ChoreoLib/dep"
+        "https://SleipnirGroup.github.io/ChoreoLib/dep",
+        "https://repo1.maven.org/maven2"
     ],
-    "jsonUrl": "https://SleipnirGroup.github.io/ChoreoLib/dep/ChoreoLib2025Beta.json",
+    "jsonUrl": "https://SleipnirGroup.github.io/ChoreoLib/dep/ChoreoLib.json",
     "javaDependencies": [
         {
-            "groupId": "choreo",
+            "groupId": "com.choreo.lib",
             "artifactId": "ChoreoLib-java",
-            "version": "2025.0.0-beta-2"
+            "version": "2024.2.3"
         },
         {
             "groupId": "com.google.code.gson",
@@ -23,9 +24,9 @@
     "jniDependencies": [],
     "cppDependencies": [
         {
-            "groupId": "choreo",
+            "groupId": "com.choreo.lib",
             "artifactId": "ChoreoLib-cpp",
-            "version": "2025.0.0-beta-2",
+            "version": "2024.2.3",
             "libName": "ChoreoLib",
             "headerClassifier": "headers",
             "sharedLibrary": false,

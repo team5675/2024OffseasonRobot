@@ -29,6 +29,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Constants;
+import frc.robot.LimelightHelpers;
 import frc.robot.util.AllianceFlipUtil;
 import frc.robot.util.FieldConstants;
 
@@ -81,6 +82,10 @@ public class Limelight extends SubsystemBase{
         limelightTable = NetworkTableInstance.getDefault().getTable(Constants.LimelightConstants.limelightName);
         botPoseSub = limelightTable.getDoubleArrayTopic("botpose_wpiblue").subscribe(new double[]{});
     }
+    public boolean isGamePieceDetected(){
+        boolean targetDetected = LimelightHelpers.getTV("limelight");
+        return targetDetected;
+    }
     //     posePacket = new PosePacket();
     //     posePacket.pose2d = Optional.empty();
     //     posePacket.pose3d = Optional.empty();
@@ -115,9 +120,9 @@ public class Limelight extends SubsystemBase{
     //     targetID = id;
     // }
 
-    // @Override
-    // public void periodic() {
-
+    @Override
+    public void periodic() {
+        
     //     robotPoseDouble = botPoseSub.getAtomic(new double[] {}).value;
 
     //     //26 ft 3.5in
@@ -269,7 +274,7 @@ public class Limelight extends SubsystemBase{
     //     return Wristavator.getInstance().getOriginToLauncherMouthTranslationYZ()
     //         .minus(new Translation2d(FieldConstants.ampCenter.getY(), FieldConstants.ampCenter.getZ()));
     // }
-
+    }
     public static Limelight getInstance() {
         if(instance == null)
             instance = new Limelight();

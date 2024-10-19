@@ -7,11 +7,7 @@
     "Middle Paths",
     "Right Paths"
   ],
-  "autoFolders": [
-    "Left Autos",
-    "Middle Autos",
-    "Right Autos"
-  ],
+  "autoFolders": [],
   "defaultMaxVel": 5.0,
   "defaultMaxAccel": 5.0,
   "defaultMaxAngVel": 720.0,

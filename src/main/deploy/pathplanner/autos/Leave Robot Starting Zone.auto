@@ -12,18 +12,6 @@
     "data": {
       "commands": [
         {
-          "type": "named",
-          "data": {
-            "name": "LaunchNoteCommand"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Shutdown Launcher"
-          }
-        },
-        {
           "type": "wait",
           "data": {
             "waitTime": 10.0

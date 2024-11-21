@@ -190,6 +190,20 @@ public class Constants {
         public static final TrapezoidProfile.Constraints elevatorProfileConstraints = new TrapezoidProfile.Constraints(0.5, 0.2);
     }
 
+    public class ElevatorConstants {
+        public static final int elevatorMotorID = 5;
+        public static final double P = 0.01;
+        public static final double I = 0;
+        public static final double D = 0;
+    }
+
+    public class WristConstants {
+        public static final int wristMotorID = 5;
+        public static final double P = 0.01;
+        public static final double I = 0;
+        public static final double D = 0;
+    }
+
     public class IntakeConstants {
 
         public static final int intakeMotorID = 25;
